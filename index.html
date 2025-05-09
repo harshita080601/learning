@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🌈 Fun Reconciliation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Spreadsheet Reconciliation ✨</h1>
+        <p>Automating your work so you can pretend to be busy.</p>
+        
+        <form method="post" enctype="multipart/form-data">
+            <div class="file-box">
+                <label for="file1">📁 System A File:</label>
+                <input type="file" name="file1" accept=".xlsx,.xls" required>
+            </div>
+            
+            <div class="file-box">
+                <label for="file2">📁 System B File:</label>
+                <input type="file" name="file2" accept=".xlsx,.xls" required>
+            </div>
+            
+            <button type="submit">⚡ Compare Files</button>
+        </form>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

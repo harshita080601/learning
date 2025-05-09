@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>💣 Oops.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🚨 Error Alert 🚨</h1>
+        <p>{{ message }}</p>
+        <img src="{{ url_for('static', filename='dumpster-fire.gif') }}" width="200">
+        <p><a href="/">🔙 Try again (or take a deep breath)</a></p>
+    </div>
+</body>
+</html>
